@@ -1,0 +1,45 @@
+show_breadcrumbs:
+  type: bool
+  default: true
+  refresh: true
+
+category_sections:
+  type: objects
+  default:
+    - title: "Trending Games"
+      initial_count: 6
+  schema:
+    name: section
+    properties:
+      title:
+        type: string
+        required: true
+        validations:
+          min_length: 1
+          max_length: 100
+      categories:
+        type: categories
+      initial_count:
+        type: integer
+        validations:
+          min: 0
+          max: 50
+      compact:
+        type: boolean
+        default: false
+
+featured_tag:
+  default: "featured"
+
+featured_content_max:
+  type: integer
+  default: 6
+  min: 1
+  max: 20
+
+about_title:
+  default: "About EA Forums English"
+
+about_text:
+  default: "Welcome to EA Forums, where you can chat about games with other players, help each other out, share feedback, and report issues you're having with EA games."
+  textarea: true

@@ -1,0 +1,32 @@
+.block-topic-list {
+  &__tabs {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    min-height: var(--ea-col-header-height);
+    border-bottom: 1px solid var(--primary-low);
+    margin-bottom: var(--space-4);
+  }
+
+  &__tab {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2) 0;
+    font-size: var(--font-0);
+    font-weight: 600;
+    color: var(--primary-medium);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &.--active {
+      color: var(--tertiary);
+      border-bottom-color: var(--tertiary);
+    }
+  }
+}

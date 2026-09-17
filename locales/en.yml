@@ -1,0 +1,43 @@
+en:
+  theme_metadata:
+    description: "EA Forums demo theme"
+    settings:
+      show_breadcrumbs: "Show a breadcrumb bar below the header on category, topic, and other inner pages."
+      category_sections: "Titled sections of categories (e.g. \"Trending Games\"). Each section has a heading, the categories to feature, an optional initial count before \"Show all\", and a \"compact\" toggle (large cards vs. a compact horizontal stack of boxes)."
+      featured_tag: "Topics with this tag are listed in the Featured Content sidebar box."
+      featured_content_max: "Maximum number of topics to show in the Featured Content box."
+      about_title: "Heading for the About sidebar box."
+      about_text: "Body text for the About sidebar box."
+  breadcrumbs:
+    home: "EA Forums"
+    admin: "Admin"
+  category_search:
+    placeholder: "Search %{category}"
+  homepage:
+    categories:
+      heading: "Categories"
+      show_all: "Show all"
+      show_less: "Show less"
+    topics:
+      tabs:
+        newest: "Newest Topics"
+        likes: "Most Likes"
+        views: "Most Viewed"
+        replies: "Most Replies"
+      empty: "No topics to show."
+      views:
+        one: "%{count} view"
+        other: "%{count} views"
+      likes:
+        one: "%{count} like"
+        other: "%{count} likes"
+      replies:
+        one: "%{count} reply"
+        other: "%{count} replies"
+    featured_content:
+      heading: "Featured Content"
+    leaderboard:
+      heading: "Leaderboard"
+      see_all: "See all"
+    events:
+      heading: "Upcoming Events"

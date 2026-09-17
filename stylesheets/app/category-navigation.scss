@@ -1,0 +1,119 @@
+.navigation-container.category-navigation {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  .navigation-controls {
+    margin-inline-start: auto;
+  }
+
+  .navigation-controls .btn,
+  .category-breadcrumb .select-kit-header {
+    min-height: 42px;
+    padding-inline: var(--space-3);
+    border-radius: var(--d-border-radius);
+    background: rgb(0 0 0 / 0.18);
+    border: 1px solid rgb(255 255 255 / 0.15);
+    backdrop-filter: blur(6px);
+    color: rgb(255 255 255 / 0.85);
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+
+    .d-icon,
+    .selected-name,
+    .badge-category__name,
+    .caret-icon {
+      color: rgb(255 255 255 / 0.85);
+    }
+
+    &:hover {
+      background: rgb(0 0 0 / 0.28);
+      color: #fff;
+
+      .d-icon,
+      .selected-name,
+      .badge-category__name,
+      .caret-icon {
+        color: #fff;
+      }
+    }
+  }
+
+  .category-breadcrumb
+    .select-kit.combo-box.category-drop.has-selection
+    .select-kit-header {
+    border-color: rgb(255 255 255 / 0.15);
+  }
+
+  #navigation-bar {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 2px;
+    box-sizing: border-box;
+    min-height: 42px;
+    margin: 0;
+    padding: 4px;
+    list-style: none;
+    border-radius: 999px;
+    background: rgb(0 0 0 / 0.18);
+    border: 1px solid rgb(255 255 255 / 0.15);
+    backdrop-filter: blur(6px);
+
+    > li {
+      display: flex;
+      margin: 0;
+    }
+
+    > li > a {
+      display: flex;
+      align-items: center;
+      height: auto;
+      padding: 0 var(--space-3);
+      border: none;
+      border-radius: 999px;
+      color: rgb(255 255 255 / 0.85);
+      font-weight: 600;
+      text-decoration: none;
+      transition:
+        background 0.15s ease,
+        color 0.15s ease;
+
+      &::after {
+        display: none;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+
+      &.active {
+        background: #fff;
+        color: light-dark(var(--primary), var(--secondary));
+      }
+    }
+  }
+
+  #create-topic.btn {
+    order: 99;
+    background: color-mix(
+      in srgb,
+      var(--ea-category-color, var(--ea-gradient-accent)) 90%,
+      #000
+    );
+    border-color: transparent;
+
+    &,
+    .d-icon {
+      color: #fff;
+    }
+
+    &:hover {
+      background: color-mix(
+        in srgb,
+        var(--ea-category-color, var(--ea-gradient-accent)) 80%,
+        #000
+      );
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.carousel-topics:not(.--animate) {
+  --d-mask-color: black;
+}
+
+.carousel-topics.--cards {
+  .carousel-topics__topic,
+  .carousel-topics__topic.--peek-card {
+    box-shadow: 0 0 0 1px var(--ea-border);
+  }
+
+  .carousel-topics__topic .carousel-topics__topic-list-data {
+    background-color: var(--ea-card-bg);
+  }
+
+  .carousel-topics__title {
+    font-size: var(--font-0);
+    font-weight: 800;
+  }
+}
+
+.carousel-topics__controls.--in-carousel .carousel-topics__btn.btn-transparent {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: light-dark(#fff, #191f30);
+  border: 1px solid var(--ea-border);
+  color: light-dark(var(--primary), #fff);
+  font-size: var(--font-up-1);
+  transition: background 0.2s ease;
+
+  .d-icon {
+    color: inherit;
+  }
+
+  &:hover {
+    background: light-dark(var(--primary-very-low), #232a3f);
+  }
+}

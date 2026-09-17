@@ -1,0 +1,98 @@
+.topic-cards-list {
+  margin-top: 0;
+
+  .topic-card {
+    &.visited {
+      background-color: var(--ea-card-bg);
+    }
+
+    .main-link {
+      grid-template-columns: 1fr auto;
+      column-gap: var(--space-2);
+      grid-template-areas:
+        "tags     tags"
+        "title    title"
+        "excerpt  excerpt"
+        "op       metadata";
+      grid-template-rows: auto auto 1fr auto;
+
+      .topic-card__op {
+        justify-self: start;
+        align-self: center;
+        margin: 0;
+      }
+
+      .topic-card__metadata {
+        justify-self: end;
+        align-self: center;
+        margin: 0;
+      }
+    }
+
+    .topic-card__publish-date {
+      display: none;
+    }
+
+    .topic-card__metadata .topic-card__stats,
+    .topic-card__metadata .topic-card__stats * {
+      font-weight: normal;
+    }
+  }
+}
+
+.topic-card {
+  --topic-title-font-weight: 800;
+  --topic-title-font-weight--visited: 800;
+  background-color: var(--ea-card-bg);
+  border: 1px solid var(--ea-border);
+  border-radius: var(--d-border-radius);
+  box-shadow: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover,
+  &.selected {
+    border-color: var(--ea-border);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.1);
+    transform: translateY(-2px);
+  }
+
+  .main-link .title {
+    font-size: var(--font-0);
+  }
+
+  &:hover .main-link .title,
+  &.selected .main-link .title {
+    color: var(--tertiary);
+    text-decoration: none;
+  }
+
+  .topic-card__excerpt-text {
+    color: var(--primary-medium);
+    font-size: var(--font-down-2);
+    -webkit-line-clamp: 2;
+  }
+
+  .topic-card__metadata,
+  .topic-card__metadata * {
+    font-weight: normal;
+  }
+
+  .topic-card__thumbnail {
+    position: relative;
+    margin: var(--space-4) 0 var(--space-4) var(--space-4);
+    border-radius: var(--d-border-radius);
+    overflow: hidden;
+  }
+
+  .topic-card__thumbnail .main-thumbnail {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--d-border-radius);
+  }
+}

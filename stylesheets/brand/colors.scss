@@ -1,0 +1,128 @@
+$ea-page-bg: #eaeff3;
+$ea-page-bg-dark: #01081d;
+$ea-card-bg: #fff;
+$ea-card-bg-dark: #0b1122;
+
+:root {
+  --header_primary: #fff;
+  --ea-header-solid: light-dark(#0c51ec, #01081d);
+  --ea-header-bg: light-dark(
+    color-mix(in srgb, var(--ea-header-solid) 90%, #000),
+    color-mix(in srgb, var(--ea-header-solid) 22%, #01081d)
+  );
+  --ea-gradient-accent: #2360ff;
+  --ea-gradient-dark: #070707;
+  --ea-gradient: radial-gradient(
+    80% 110% at 20% 12%,
+    var(--ea-gradient-accent) 0%,
+    color-mix(in srgb, var(--ea-gradient-accent) 72%, var(--ea-gradient-dark))
+      30%,
+    color-mix(in srgb, var(--ea-gradient-accent) 42%, var(--ea-gradient-dark))
+      52%,
+    color-mix(in srgb, var(--ea-gradient-accent) 18%, var(--ea-gradient-dark))
+      74%,
+    color-mix(in srgb, var(--ea-gradient-accent) 6%, var(--ea-gradient-dark))
+      100%
+  );
+  --ea-gradient-height: 480px;
+  --ea-curve-radius: 28px;
+  --ea-curve-offset: 14px;
+  --ea-col-header-height: 2.5rem;
+  --header_background: light-dark(#0a1640, #070b12);
+  --secondary: light-dark(#{$ea-page-bg}, #{$ea-page-bg-dark});
+  --ea-card-bg: light-dark(#{$ea-card-bg}, #{$ea-card-bg-dark});
+  --ea-border: light-dark(rgb(0 0 0 / 0.08), rgb(255 255 255 / 0.1));
+}
+
+html.ea-category-themed {
+  --ea-gradient-accent: oklch(from var(--ea-category-color) l min(c, 0.15) h);
+  --ea-header-solid: oklch(from var(--ea-category-color) l min(c, 0.15) h);
+  --ea-header-bg: light-dark(
+    color-mix(in srgb, var(--ea-header-solid) 90%, #000),
+    oklch(from var(--ea-category-color) 18% min(c, 0.05) h)
+  );
+  --secondary: light-dark(
+    color-mix(in srgb, #{$ea-page-bg} 97%, var(--ea-category-color)),
+    oklch(from var(--ea-category-color) 14% min(c, 0.014) h)
+  );
+  --ea-card-bg: light-dark(
+    color-mix(in srgb, #{$ea-card-bg} 97%, var(--ea-category-color)),
+    oklch(from var(--ea-category-color) 22% min(c, 0.022) h)
+  );
+  --ea-border: light-dark(
+    color-mix(in srgb, var(--ea-category-color) 9%, transparent),
+    color-mix(in srgb, var(--ea-category-color) 12%, transparent)
+  );
+  --tertiary: light-dark(
+    oklch(from var(--ea-category-color) 48% min(c, 0.15) h),
+    oklch(from var(--ea-category-color) 74% min(c, 0.15) h)
+  );
+  --tertiary-very-low: color-mix(in srgb, var(--tertiary) 8%, var(--secondary));
+  --tertiary-low: color-mix(in srgb, var(--tertiary) 20%, var(--secondary));
+  --tertiary-medium: color-mix(in srgb, var(--tertiary) 50%, var(--secondary));
+  --tertiary-high: color-mix(in srgb, var(--tertiary) 70%, var(--secondary));
+  --tertiary-hover: color-mix(in srgb, var(--tertiary) 85%, var(--primary));
+  --tertiary-25: color-mix(in srgb, var(--tertiary) 6%, var(--secondary));
+  --tertiary-50: color-mix(in srgb, var(--tertiary) 10%, var(--secondary));
+  --tertiary-100: color-mix(in srgb, var(--tertiary) 16%, var(--secondary));
+  --tertiary-200: color-mix(in srgb, var(--tertiary) 26%, var(--secondary));
+  --tertiary-300: color-mix(in srgb, var(--tertiary) 38%, var(--secondary));
+  --tertiary-400: color-mix(in srgb, var(--tertiary) 52%, var(--secondary));
+  --tertiary-500: var(--tertiary);
+  --tertiary-600: color-mix(in srgb, var(--tertiary) 66%, var(--secondary));
+  --tertiary-700: color-mix(in srgb, var(--tertiary) 74%, var(--secondary));
+  --tertiary-800: color-mix(in srgb, var(--tertiary) 82%, var(--secondary));
+  --tertiary-900: color-mix(in srgb, var(--tertiary) 88%, var(--secondary));
+  --tertiary-or-tertiary-low: var(--tertiary);
+  --tertiary-low-or-tertiary-high: var(--tertiary-low);
+  --tertiary-med-or-tertiary: var(--tertiary);
+  --quaternary: var(--tertiary);
+  --quaternary-low: var(--tertiary-low);
+  --primary: light-dark(
+    oklch(from var(--ea-category-color) 20% calc(c * 0.04) h),
+    oklch(from var(--ea-category-color) 93% calc(c * 0.04) h)
+  );
+  --primary-very-low: color-mix(in srgb, var(--primary) 3%, var(--secondary));
+  --primary-low: color-mix(in srgb, var(--primary) 10%, var(--secondary));
+  --primary-low-mid: var(--primary-medium);
+  --primary-medium: color-mix(in srgb, var(--primary) 50%, var(--secondary));
+  --primary-high: color-mix(in srgb, var(--primary) 70%, var(--secondary));
+  --primary-very-high: color-mix(in srgb, var(--primary) 85%, var(--secondary));
+  --primary-50: color-mix(in srgb, var(--primary) 3%, var(--secondary));
+  --primary-100: color-mix(in srgb, var(--primary) 6%, var(--secondary));
+  --primary-200: color-mix(in srgb, var(--primary) 12%, var(--secondary));
+  --primary-300: color-mix(in srgb, var(--primary) 22%, var(--secondary));
+  --primary-400: color-mix(in srgb, var(--primary) 32%, var(--secondary));
+  --primary-500: color-mix(in srgb, var(--primary) 40%, var(--secondary));
+  --primary-600: color-mix(in srgb, var(--primary) 55%, var(--secondary));
+  --primary-700: color-mix(in srgb, var(--primary) 65%, var(--secondary));
+  --primary-800: color-mix(in srgb, var(--primary) 75%, var(--secondary));
+  --primary-900: color-mix(in srgb, var(--primary) 85%, var(--secondary));
+  --secondary-low: color-mix(in srgb, var(--secondary) 88%, var(--primary));
+  --secondary-medium: color-mix(in srgb, var(--secondary) 78%, var(--primary));
+  --secondary-high: color-mix(in srgb, var(--secondary) 65%, var(--primary));
+  --secondary-very-high: color-mix(in srgb, var(--secondary) 50%, var(--primary));
+  --primary-med-or-secondary-med: var(--primary-medium);
+  --primary-med-or-secondary-high: light-dark(
+    var(--primary-medium),
+    var(--secondary-high)
+  );
+  --primary-high-or-secondary-low: light-dark(
+    var(--primary-high),
+    var(--secondary-low)
+  );
+  --primary-low-mid-or-secondary-high: light-dark(
+    var(--primary-low-mid),
+    var(--secondary-high)
+  );
+  --primary-low-mid-or-secondary-low: light-dark(
+    var(--primary-low-mid),
+    var(--secondary-low)
+  );
+  --primary-or-primary-low-mid: light-dark(
+    var(--primary),
+    var(--primary-low-mid)
+  );
+  --blend-primary-secondary-5: color-mix(in srgb, var(--primary) 5%, var(--secondary));
+  --topic-timeline-border-color: var(--tertiary-low);
+}

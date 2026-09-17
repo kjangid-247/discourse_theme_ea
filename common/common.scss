@@ -1,0 +1,10 @@
+@use "lib/viewport";
+@import "brand";
+@import "app";
+@import "components";
+@import "blocks";
+
+:root {
+  --d-border-radius-small: 6px;
+  --d-border-radius: 12px;
+}

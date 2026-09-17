@@ -1,0 +1,19 @@
+html.ea-gradient {
+  body {
+    background:
+      linear-gradient(
+          180deg,
+          transparent 38%,
+          color-mix(in srgb, var(--secondary) 30%, transparent) 64%,
+          color-mix(in srgb, var(--secondary) 70%, transparent) 82%,
+          var(--secondary) 96%
+        )
+        top center / 100% var(--ea-gradient-height) no-repeat,
+      var(--ea-gradient) top center / 100% var(--ea-gradient-height) no-repeat,
+      var(--secondary);
+  }
+
+  #main-outlet-wrapper {
+    margin-top: var(--ea-curve-offset);
+  }
+}

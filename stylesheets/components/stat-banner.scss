@@ -1,0 +1,47 @@
+.stat-banner__wrapper {
+  background-color: transparent;
+  padding-block: 0;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    height: auto;
+    padding: 0 var(--space-5);
+
+    & + li {
+      border-inline-start: 1px solid rgb(255 255 255 / 0.25);
+    }
+
+    > a,
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      text-decoration: none;
+    }
+
+    span:first-child {
+      color: #fff;
+      font-size: var(--font-up-3);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    span:last-child {
+      color: rgb(255 255 255 / 0.75);
+      font-size: var(--font-down-1);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  }
+}

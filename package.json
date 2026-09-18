@@ -1,0 +1,35 @@
+{
+  "name": "discourse-theme-ea-react",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm build:react && pnpm build:paloma && pnpm build:features",
+    "build:features": "node scripts/build-react-features.js",
+    "build:react": "vite build",
+    "build:paloma": "node scripts/build-paloma.js",
+    "install:paloma": "pnpm add @paloma/core-ui @paloma/tokens @paloma/icons @paloma/layout @paloma/primitives",
+    "watch": "node scripts/watch-react.js",
+    "watch:react": "vite build --watch",
+    "typecheck:react": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@paloma/core-ui": "^1.19.0",
+    "@paloma/icons": "^1.19.0",
+    "@paloma/layout": "^1.19.0",
+    "@paloma/primitives": "^1.19.0",
+    "@paloma/tokens": "^1.19.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.25.12",
+    "esbuild-plugin-external-global": "^1.0.1",
+    "postcss": "^8.5.6",
+    "postcss-prefix-selector": "^2.1.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

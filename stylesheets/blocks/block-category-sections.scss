@@ -86,6 +86,7 @@
 }
 
 .category-card {
+  width: auto;
   background: var(--ea-card-bg);
   border: 1px solid var(--ea-border);
   border-radius: var(--d-border-radius);
@@ -139,4 +140,16 @@
     text-align: center;
     margin: 0;
   }
+}
+
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 500px;
+  background-color: var(--ea-card-bg);
+  border: 1px solid var(--ea-border);
+  border-radius: var(--d-border-radius);
+  text-align: center;
 }

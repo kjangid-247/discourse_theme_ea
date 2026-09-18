@@ -43,3 +43,43 @@
     background: light-dark(var(--primary-very-low), #232a3f);
   }
 }
+
+.ea-paloma-carousel {
+  width: min(100%, 330px);
+  color: var(--primary);
+}
+
+.ea-paloma-carousel__slide {
+  width: min(100%, 306px);
+}
+
+.ea-paloma-carousel__card {
+  box-sizing: border-box;
+  width: 256px;
+  min-height: 266px;
+  padding: var(--space-2) var(--space-4);
+  overflow: hidden;
+  border: 1px solid var(--primary-low);
+  border-radius: 12px;
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.ea-paloma-carousel__card h3 {
+  margin: 0;
+  padding: var(--space-3) 0;
+  font-size: var(--font-0);
+  font-weight: 700;
+}
+
+.ea-paloma-carousel__card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ea-paloma-carousel__card li {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--primary-low);
+  font-size: var(--font-0);
+}

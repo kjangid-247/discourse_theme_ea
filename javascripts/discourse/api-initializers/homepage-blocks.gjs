@@ -4,12 +4,17 @@ import BlockCategorySections from "../blocks/block-category-sections";
 import BlockColumns from "../blocks/block-columns";
 import BlockFeaturedContent from "../blocks/block-featured-content";
 import BlockLeaderboard from "../blocks/block-leaderboard";
+import BlockReactCounter from "../blocks/block-react-counter";
 import BlockStack from "../blocks/block-stack";
 import BlockTopicList from "../blocks/block-topic-list";
 import BlockUpcomingEvents from "../blocks/block-upcoming-events";
 
 export default apiInitializer((api) => {
   api.renderBlocks("homepage-blocks", [
+    {
+      block: BlockReactCounter,
+      id: "ea-react-counter",
+    },
     {
       block: BlockCategorySections,
       id: "ea-category-first",

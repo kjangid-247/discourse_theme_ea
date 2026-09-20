@@ -9,7 +9,14 @@ export default function CounterWidget({ componentProps }: ReactBridgeProps) {
   const { Button, ThemeProvider ,Carousel} = getPaloma();
   const [mode, setMode] = useState(getDiscourseColorMode);
 
-  useEffect(() => subscribeToDiscourseColorMode(setMode), []);
+  useEffect(() =>{
+    fetch("https://api.restful-api.dev/objects").then(response => response.json()).then(data => {
+      console.log('Custom fetch response: ' + JSON.stringify(data));
+    }).catch(error => {
+      console.error('Custom fetch error: ' + error);
+    });
+    subscribeToDiscourseColorMode(setMode)
+  }, []);
 
   function increment() {
     setCount(count + 1);
@@ -20,7 +27,7 @@ export default function CounterWidget({ componentProps }: ReactBridgeProps) {
       <ThemeProvider theme="ea-blue" mode={mode}>
         <section className="ea-react-example" aria-labelledby="ea-react-counter-title">
           <h2 id="ea-react-counter-title" className="ea-react-example__title">
-            React counter : kalpit jangid zz
+            React counter
           </h2>
           <p className="ea-react-example__message">Current count: {count}</p>
           <Button onPress={increment}>Increment</Button>
@@ -43,7 +50,7 @@ export default function CounterWidget({ componentProps }: ReactBridgeProps) {
               <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
-                <li>Item 3</li>
+                <li>Item 345</li>
               </ul>
             </article>
             <article className="ea-paloma-carousel__card">

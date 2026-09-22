@@ -23,14 +23,14 @@ function watchDirectory(directory, label, args) {
   });
 }
 
-const palomaBuild = ["scripts/build-paloma.js"];
+const sharedComponentsBuild = ["scripts/build-shared-components.js"];
 const featureBuild = ["scripts/build-react-features.js"];
 const reactWatch = ["node_modules/vite/bin/vite.js", "build", "--watch"];
 
-run("build:paloma", palomaBuild);
+run("build:shared_components", sharedComponentsBuild);
 run("build:features", featureBuild);
 const reactWatcher = spawn(process.execPath, reactWatch, { stdio: "inherit" });
-watchDirectory("react-src/paloma", "build:paloma", palomaBuild);
+watchDirectory("react-src/shared_components", "build:shared_components", sharedComponentsBuild);
 watchDirectory("react-src/features", "build:features", featureBuild);
 
 function stop() {

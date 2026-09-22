@@ -1,4 +1,4 @@
-import loadPalomaRuntime from "./load-paloma-runtime";
+import loadSharedComponentsRuntime from "./load-shared-components-runtime";
 
 const featureAssets = {
   counter: "react-counter",
@@ -15,7 +15,7 @@ export default function loadReactComponent(name) {
     return featurePromises.get(name);
   }
 
-  const promise = loadPalomaRuntime()
+  const promise = loadSharedComponentsRuntime()
     .then(
       () =>
         new Promise((resolve, reject) => {

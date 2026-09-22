@@ -9,7 +9,7 @@
   "maximum_discourse_version": null,
   "assets": {
     "react-runtime": "assets/vendor/react/react-runtime.js",
-    "paloma-runtime": "assets/vendor/paloma/paloma-runtime.js",
+    "shared_components-runtime": "assets/vendor/shared_components/shared_components-runtime.js",
     "react-counter": "assets/vendor/react/features/counter.js"
   },
   "color_schemes": {

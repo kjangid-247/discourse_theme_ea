@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm build:react && pnpm build:paloma && pnpm build:features",
+    "build": "pnpm build:react && pnpm build:shared_components && pnpm build:features",
     "build:features": "node scripts/build-react-features.js",
     "build:react": "vite build",
-    "build:paloma": "node scripts/build-paloma.js",
-    "install:paloma": "pnpm add @paloma/core-ui @paloma/tokens @paloma/icons @paloma/layout @paloma/primitives",
+    "build:shared_components": "node scripts/build-shared-components.js",
+    "install:shared_components": "pnpm add @paloma/core-ui @paloma/tokens @paloma/icons @paloma/layout @paloma/primitives",
     "watch": "node scripts/watch-react.js",
     "watch:react": "vite build --watch",
     "typecheck:react": "tsc --noEmit"

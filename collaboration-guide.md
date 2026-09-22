@@ -11,7 +11,7 @@ The feature-bundle architecture (see `README.md`) already isolates most work by 
 ```text
 react-src/features/<feature>/     <- one folder per feature, owned by one developer/pair
 javascripts/discourse/blocks/     <- one block file per feature
-react-src/paloma/index.tsx        <- single shared Paloma barrel (narrow surface)
+react-src/shared_components/index.tsx        <- single shared Paloma barrel (narrow surface)
 react-src/features/manifest.js    <- single shared feature registry (small, append-only)
 about.json                        <- single shared asset map (small, append-only)
 ```
@@ -40,9 +40,9 @@ Divide work **by feature folder**, not by file type:
 
 | Developer | Owns |
 | --- | --- |
-| Dev A | `react-src/features/counter/**`, `javascripts/discourse/blocks/block-react-counter.gjs`, `stylesheets/components/react-example.scss` (counter-specific rules only) |
+| Dev A | `react-src/features/counter/**`, `javascripts/discourse/blocks/block-react-counter.gjs`, `stylesheets/components/shared_components.scss` (counter-specific rules only) |
 | Dev B | `react-src/features/profile-tools/**`, `javascripts/discourse/blocks/block-profile-tools.gjs`, its own SCSS partial |
-| Dev C | `react-src/paloma/index.tsx` additions (new approved component), `react-src/paloma/adapter.ts` |
+| Dev C | `react-src/shared_components/index.tsx` additions (new approved component), `react-src/shared_components/adapter.ts` |
 
 Each developer's changes stay inside their own feature folder for 95% of the work. This is what makes true parallel development possible — two people rarely touch the same file at the same time.
 
@@ -75,15 +75,15 @@ If two feature branches both append here, Git resolves it automatically as long 
 
 - Each developer runs their own `pnpm watch` and their own `discourse_theme watch .` against their **own dev/preview theme ID** (see `deployment-strategy.md`, Option D). Never share one remote theme ID between two developers — one person's live sync will overwrite the other's.
 - Because features build to independent files (`assets/vendor/react/features/<feature>.js`), running `pnpm build:features` never touches a teammate's feature output.
-- The shared runtimes (`react-runtime.js`, `paloma-runtime.js`) only need a rebuild when someone changes `react-src/bridge.tsx` or `react-src/paloma/index.tsx` — communicate in your team channel before editing either, since both are shared dependencies for everyone's feature.
+- The shared runtimes (`react-runtime.js`, `shared_components-runtime.js`) only need a rebuild when someone changes `react-src/bridge.tsx` or `react-src/shared_components/index.tsx` — communicate in your team channel before editing either, since both are shared dependencies for everyone's feature.
 
 ## 7. Adding a New Paloma Component (Shared Surface)
 
-Because `react-src/paloma/index.tsx` is the only allowed import site for `@paloma/core-ui`, treat it like a small shared API:
+Because `react-src/shared_components/index.tsx` is the only allowed import site for `@paloma/core-ui`, treat it like a small shared API:
 
 1. Whoever needs a new Paloma control (e.g., `Badge`) opens a small, standalone MR that only adds the import/export to `index.tsx` and `adapter.ts`.
 2. Get that merged first, independent of any feature that will use it.
-3. Feature branches then only need to rebase to pick up the newly available control — they never edit `paloma/index.tsx` themselves.
+3. Feature branches then only need to rebase to pick up the newly available control — they never edit `shared_components/index.tsx` themselves.
 
 This turns Paloma additions into a fast, low-conflict, single-purpose MR instead of something bundled inside a larger feature change.
 

@@ -12,7 +12,7 @@ declare global {
       jsxs: typeof import("react").createElement;
       jsxDEV: typeof import("react").createElement;
     };
-    EaPaloma?: {
+    EaSharedComponents?: {
       Button: React.ElementType;
       ThemeProvider: React.ElementType;
       Carousel: React.ElementType;

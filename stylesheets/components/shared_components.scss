@@ -1,0 +1,22 @@
+.block-shared-components-example {
+  margin: var(--space-4) 0;
+}
+
+.ea-shared-components-example {
+  padding: var(--space-4);
+  border: 1px solid var(--primary-low);
+  border-radius: var(--d-border-radius-small);
+  background: var(--secondary);
+}
+
+.ea-shared-components-example__title {
+  margin: 0 0 var(--space-2);
+  color: var(--primary);
+  font-size: var(--font-up-1);
+}
+
+.ea-shared-components-example__message {
+  margin: 0 0 var(--space-3);
+  color: var(--primary-medium);
+}
+

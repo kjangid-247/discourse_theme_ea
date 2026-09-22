@@ -8,7 +8,7 @@ import "@paloma/layout/styles.css";
 
 const bridge = window.DiscourseReactHybrid;
 if (!bridge) {
-  throw new Error("The React runtime must load before the Paloma runtime.");
+  throw new Error("The React runtime must load before the shared components runtime.");
 }
 
-window.EaPaloma = { Button, ThemeProvider ,Carousel};
+window.EaSharedComponents = { Button, ThemeProvider, Carousel };

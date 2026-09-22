@@ -3,6 +3,7 @@ import { modifier } from "ember-modifier";
 import loadReactComponent from "../lib/load-react-component";
 
 export default class EaReactHost extends Component {
+  
   mountReact = modifier((element) => {
     let cleanup;
     let destroyed = false;
